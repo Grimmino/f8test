@@ -32,10 +32,15 @@ formDropDownItem.forEach(item => {
     })
 })
 
-//input focus/not empty
+
 formLabel.forEach((item) => {
     item.querySelector("input").addEventListener("input", function(e) {
         e.target.value != '' ? e.target.classList.add('form__input--focus') : e.target.classList.remove('form__input--focus')
+        formDropDownItem.forEach(item => {
+            item.textContent.toUpperCase().indexOf(e.target.value.toUpperCase()) > -1 
+                ? item.classList.remove('form__dropdown__item--hide') 
+                : item.classList.add('form__dropdown__item--hide') 
+        })
     })
 })
 

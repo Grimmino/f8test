@@ -688,11 +688,13 @@ formDropDownItem.forEach(function (item) {
     input.value = item.textContent;
     input.classList.add('form__input--focus');
   });
-}); //input focus/not empty
-
+});
 formLabel.forEach(function (item) {
   item.querySelector("input").addEventListener("input", function (e) {
     e.target.value != '' ? e.target.classList.add('form__input--focus') : e.target.classList.remove('form__input--focus');
+    formDropDownItem.forEach(function (item) {
+      item.textContent.toUpperCase().indexOf(e.target.value.toUpperCase()) > -1 ? item.classList.remove('form__dropdown__item--hide') : item.classList.add('form__dropdown__item--hide');
+    });
   });
 });
 

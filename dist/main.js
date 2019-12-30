@@ -683,7 +683,6 @@ var formLabel = formElem.querySelectorAll('.form__label:not(.form__label_checkbo
 var formDropDownItem = formElem.querySelectorAll('.form__dropdown__item');
 formDropDownItem.forEach(function (item) {
   item.addEventListener('click', function () {
-    console.log(123);
     var input = item.closest('.form__label').querySelector('.form__input');
     input.value = item.textContent;
     input.classList.add('form__input--focus');

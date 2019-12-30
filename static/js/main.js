@@ -25,7 +25,6 @@ let formDropDownItem = formElem.querySelectorAll('.form__dropdown__item')
 
 formDropDownItem.forEach(item => {
     item.addEventListener('click', function() {
-        console.log(123)
         let input = item.closest('.form__label').querySelector('.form__input')
         input.value = item.textContent
         input.classList.add('form__input--focus')

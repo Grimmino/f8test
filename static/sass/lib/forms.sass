@@ -1,0 +1,161 @@
+.form
+    background: $body
+    padding: 35px
+    width: 100%
+    max-width: 650px
+    margin: 0 auto
+    display: flex
+    flex-wrap: wrap
+    @media (max-width: #{$breakpoint})
+        padding: 15px 20px
+    p
+        min-width: 100%
+        line-height: 1.62
+        &:not(:last-of-type)
+            margin-bottom: 10px
+        &:not(:first-of-type)
+            font-size: 0.75rem
+    &__title
+        font-weight: 800
+        font-size: 1.5rem
+        margin-bottom: 15px
+        @media (max-width: #{$breakpoint})
+            font-size: 1.25rem
+    &__label
+        display: block
+        position: relative
+        min-width: 100%
+        &:not(:last-of-type)
+            margin-bottom: 10px
+        &:before
+            content: ''
+            width: 15px
+            height: 15px
+            position: absolute
+            right: -5px
+            top: 50%
+            transform: translate(100%, -50%)
+            border-radius: 50%
+            display: flex
+            align-items: center
+            justify-content: center
+            font-size: .8rem
+            font-weight: 600
+        &.error
+            .form__input_invalid
+                display: block
+            &:before
+                content: '!'
+                color: red
+                border: 2px solid red
+        &.valid
+            &:before
+                content: '✓'
+                color: green
+                border: 2px solid green
+        @media (min-width: #{$breakpoint})
+            &:not(:last-of-type)
+                margin-bottom: 20px
+            &_left-solo
+                min-width: 50%
+                margin-right: 10px
+                padding-right: 15px
+                &:before
+                    right: 10px
+            &_left
+                padding-right: 15px
+                min-width: 50%
+                &:before
+                    right: 10px
+            &_right
+                padding-left: 15px
+                min-width: 50%
+                span
+                    left: 35px
+        &_checkbox
+            display: flex
+            align-items: center
+            margin: 25px 0 30px
+            span
+                color: #666666
+            @media (min-width: #{$breakpoint})
+                margin: 25px 0 30px
+                span
+                    font-size: .75rem
+    &__placeholder
+        position: absolute
+        top: 50%
+        left: 20px
+        transform: translateY(-50%)
+        transition: top .2s ease-in-out, font-size .2s ease-in-out
+        font-weight: 800
+        color: #adadad
+    &__input
+        height: 70px
+        width: 100%
+        border: 3px solid #eaeaea
+        padding-left: 17px
+        color: #333333
+        position: relative
+        &_invalid
+            font-size: 0.75rem
+            color: red
+            position: absolute
+            top: calc(100% + 5px)
+            left: 0
+            display: none
+        &::placeholder
+            transition: color .2s ease-in-out
+            color: transparent
+        &--focus,
+        &:focus
+            padding-top: 15px
+            & ~ .form__placeholder
+                top: 27px
+                font-size: .75rem
+            &::placeholder
+                color: #3e3838
+        &:focus ~ .form__dropdown
+            opacity: 1
+            height: max-content
+            overflow: hidden
+        &[type="date"]
+            &::-webkit-inner-spin-button,
+            &::-webkit-calendar-picker-indicator
+                display: none
+        @media (max-width: #{$breakpoint})
+            font-size: .875rem
+    &__checkbox
+        appearance: none
+        &_toggler
+            width: 20px
+            height: 20px
+            display: block
+            margin-right: 10px
+            border: 3px solid #eaeaea
+        &:checked + .form__checkbox_toggler
+            background: #000
+    &__dropdown
+        position: absolute
+        top: 100%
+        left: 0
+        width: 100%
+        background: $main
+        z-index: 1000
+        opacity: 0
+        height: 1px
+        overflow: hidden
+        &__item
+            padding: 10px 20px
+            cursor: pointer
+            &:hover
+                background: darken($main, 10%)
+        &_arrow
+            position: absolute
+            top: 50%
+            right: 20px
+            transform: translateY(-50%)
+        &_icon
+            width: 20px
+            height: 20px
+            fill: #adadad

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#17181a"/>
+    <title>f8test</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href='./main.css'>
+</head>
+
+<body>
+    <div aria-hidden="true" style="position: absolute; width: 0; height: 0;">
+        <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <symbol viewBox="0 0 24 24" id="arrow-bottom">
+                    <path d="M12 18.071L6.429 12.5 4.929 14 12 21.071 19.071 14 17.571 12.5z"></path>
+                    <path d="M4 10H20V12H4z" transform="rotate(-90 12 11)"></path>
+                </symbol>
+            </defs>
+        </svg>
+    </div>
+
+    <header class="header">
+        <div class="header__modal">
+            <button class="btn btn__modal">Register for an Open Day</button>
+        </div>
+    </header>
+
+    <div class="modal">
+        <div class="modal__inner">
+            <div class="modal__close"></div>
+            <div class="modal__title">
+                <span>come and say hello</span>
+                <h3>Register for an Open Day</h3>
+            </div>
+            <form class="form" action="/" method="post">
+                <p>Open Days are the perfect opportunity to get to know us, visit our campus, see acccommodation, meet academics, and get the low-down on the Essex student life.</p>
+                
+                <div class="form__title">Book your place</div>
+
+                <label class="form__label">
+                    <input name="enducation" class="form__input" type="text" placeholder="Select enducation" autocomplete="off">
+                    <span class="form__placeholder">I am an</span>
+                    <div class="form__dropdown_arrow">
+                        <svg class="form__dropdown_icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
+                        </svg>
+                    </div>
+                    <ul class="form__dropdown">
+                        <li class="form__dropdown__item">123123</li>
+                        <li class="form__dropdown__item">qwe</li>
+                        <li class="form__dropdown__item">gdg</li>
+                    </ul>
+                </label>
+    
+                <label class="form__label">
+                    <input name="campus" class="form__input" type="text" placeholder="Colchester Campus" autocomplete="off">
+                    <span class="form__placeholder">Campus</span>
+                    <div class="form__dropdown_arrow">
+                        <svg class="form__dropdown_icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
+                        </svg>
+                    </div>
+                </label>
+    
+                <label class="form__label form__label_left-solo">
+                    <input name="date" class="form__input" type="date">
+                    <span class="form__placeholder">Date*</span>
+                    <div class="form__dropdown_arrow">
+                        <svg class="form__dropdown_icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
+                        </svg>
+                    </div>
+                </label>
+    
+                <label class="form__label form__label_left">
+                    <input name="firstname" class="form__input" type="text">
+                    <span class="form__placeholder">First Name*</span>
+                </label>
+                <label class="form__label form__label_right">
+                    <input name="lastname" class="form__input" type="text">
+                    <span class="form__placeholder">Last Name*</span>
+                </label>
+                <label class="form__label">
+                    <input name="email" class="form__input" type="email">
+                    <span class="form__placeholder">Email Address*</span>
+                    <span class="form__input_invalid">invalid format</span>
+                </label>
+    
+                <label class="form__label form__label_checkbox">
+                    <input name="updates" type="checkbox" class="form__checkbox">
+                    <span class="form__checkbox_toggler"></span>
+                    <span>I would like to receive email updates from the University</span>
+                </label>
+                
+                <button class="btn btn__submit">Make A Booking</button>
+    
+                <p>The information provided by you will be held by the University of Essex in accordance with the University's Data protection Policy and may be used for the University's marketing purposes. On occasion we may contact you to advertise events with information relevant to student recruitment. If you do not wish to receive this information, please select the opt out function which can be found at the foot of your confirmation email. You will receive this email within 24 hours of registering.</p>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="./main.js"></script>
+</body>
+</html>

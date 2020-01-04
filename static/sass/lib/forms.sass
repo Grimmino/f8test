@@ -24,48 +24,40 @@
     &__label
         display: block
         position: relative
-        min-width: 100%
+        min-width: 98%
         &:not(:last-of-type)
             margin-bottom: 10px
-        &:before
-            content: ''
-            width: 15px
-            height: 15px
-            position: absolute
-            right: -5px
-            top: 50%
-            transform: translate(100%, -50%)
-            border-radius: 50%
-            display: flex
-            align-items: center
-            justify-content: center
-            font-size: .8rem
-            font-weight: 600
         &.error
             .form__input_invalid
                 display: block
-            &:before
-                content: '!'
-                color: red
-                border: 2px solid red
+            .form__icon_invalid
+                display: block
         &.valid
-            &:before
-                content: '✓'
-                color: green
-                border: 2px solid green
+            .form__icon_valid
+                display: block
+        &--focus
+            .form__input
+                padding-top: 15px
+                color: #333333
+                & ~ .form__placeholder
+                    top: 27px
+                    font-size: .75rem
+                &::placeholder
+                    color: #3e3838
         @media (min-width: #{$breakpoint})
+            min-width: 100%
             &:not(:last-of-type)
                 margin-bottom: 20px
             &_left-solo
                 min-width: 50%
                 margin-right: 10px
                 padding-right: 15px
-                &:before
+                .form__icon_check
                     right: 10px
             &_left
                 padding-right: 15px
                 min-width: 50%
-                &:before
+                .form__icon_check
                     right: 10px
             &_right
                 padding-left: 15px
@@ -89,13 +81,17 @@
         transition: top .2s ease-in-out, font-size .2s ease-in-out
         font-weight: 800
         color: #adadad
+        z-index: 1000
     &__input
         height: 70px
         width: 100%
         border: 3px solid #eaeaea
         padding-left: 17px
-        color: #333333
+        color: $body
         position: relative
+        appearance: none
+        option
+            color: #333333
         &_invalid
             font-size: 0.75rem
             color: red
@@ -106,9 +102,9 @@
         &::placeholder
             transition: color .2s ease-in-out
             color: transparent
-        &--focus,
         &:focus
             padding-top: 15px
+            color: #333333
             & ~ .form__placeholder
                 top: 27px
                 font-size: .75rem
@@ -126,39 +122,48 @@
     &__checkbox
         appearance: none
         &_toggler
+            position: relative
             width: 20px
             height: 20px
             min-width: 20px
             display: block
             margin-right: 10px
             border: 3px solid #eaeaea
+        &_check
+            width: 20px
+            height: 20px
+            fill: #adadad
+            margin: -3px 0 0 -3px
+            display: none
         &:checked + .form__checkbox_toggler
-            background: #000
+            .form__checkbox_check
+                display: block
     &__dropdown
-        position: absolute
-        top: 100%
-        left: 0
-        width: 100%
-        background: $main
-        z-index: 1000
-        display: none
-        opacity: 0
-        &:hover
-            opacity: 1
-            display: block
         &__item
             padding: 10px 20px
             cursor: pointer
-            &--hide
-                display: none
-            &:hover
-                background: darken($main, 10%)
+    &__icon
         &_arrow
             position: absolute
             top: 50%
             right: 20px
-            transform: translateY(-50%)
-        &_icon
             width: 20px
             height: 20px
             fill: #adadad
+            transform: translateY(-50%)
+        &_check
+            position: absolute
+            top: 50%
+            right: -5px
+            width: 20px
+            height: 20px
+            transform: translate(100%, -50%)
+            border-radius: 50%
+            fill: transparent
+            display: none
+        &_valid
+            border: 2px solid green
+            fill: green
+        &_invalid
+            border: 2px solid red
+            fill: red

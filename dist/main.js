@@ -661,68 +661,44 @@ if(false) {}
 /* 7 */
 /***/ (function(module, exports) {
 
-//show/hide popup
-var modal = document.querySelector('.modal');
-var modalToggler = document.querySelector('.btn__modal');
-var closeModal = document.querySelector('.modal__close');
-modalToggler.addEventListener('click', function () {
-  modal.classList.toggle('modal--show');
-});
+var popupOpenday = document.querySelector('[data-modal="openday"]');
+var popupOpendayShow = document.querySelector('[data-modal="openday-show"]');
+var popupOpendayClose = popupOpenday.querySelector('[data-modal="openday-close"]');
+popupOpendayShow.addEventListener('click', actionModal);
+popupOpendayClose.addEventListener('click', actionModal);
 
-function hideModal() {
-  modal.classList.remove('modal--show');
+function actionModal() {
+  popupOpenday.classList.toggle('modal--show');
 }
 
-closeModal.addEventListener('click', function () {
-  hideModal();
-}); //form
-
-var formElem = document.querySelector('.form');
-var formLabel = formElem.querySelectorAll('.form__label:not(.form__label_checkbox)'); //form-dropdown
-
-var formDropDownItem = formElem.querySelectorAll('.form__dropdown__item');
-formDropDownItem.forEach(function (item) {
-  item.addEventListener('click', function () {
-    var input = item.closest('.form__label').querySelector('.form__input');
-    input.value = item.textContent;
-    input.classList.add('form__input--focus');
-  });
+var formOpenday = popupOpenday.querySelector('[data-modal="openday-form"]');
+var formOpendayLabel = formOpenday.querySelectorAll('[data-modal="openday-form-field"]');
+formOpendayLabel.forEach(function (field) {
+  if (field.querySelector(".form__input_select")) {
+    field.classList.add('form__label--focus');
+  }
 });
-formLabel.forEach(function (item) {
-  item.querySelector("input").addEventListener("input", function (e) {
-    e.target.value != '' ? e.target.classList.add('form__input--focus') : e.target.classList.remove('form__input--focus');
-    formDropDownItem.forEach(function (item) {
-      item.textContent.toUpperCase().indexOf(e.target.value.toUpperCase()) > -1 ? item.classList.remove('form__dropdown__item--hide') : item.classList.add('form__dropdown__item--hide');
-    });
+formOpendayLabel.forEach(function (field) {
+  field.querySelector(".form__input").addEventListener("input", function (e) {
+    e.target.value != '' ? field.classList.add('form__label--focus') : field.classList.remove('form__label--focus');
   });
 });
 
-function inputValid(item) {
-  item.classList.contains('error') ? item.classList.remove('error') : null;
-  item.classList.add('valid');
+function inputValid(field) {
+  field.classList.contains('error') ? field.classList.remove('error') : null;
+  field.classList.add('valid');
 }
 
-function inputInvalid(item) {
-  item.classList.contains('valid') ? item.classList.remove('valid') : null;
-  item.classList.add('error');
-} //form validation
+function inputInvalid(field) {
+  field.classList.contains('valid') ? field.classList.remove('valid') : null;
+  field.classList.add('error');
+}
 
-
-formElem.addEventListener('submit', function (e) {
+formOpenday.addEventListener('submit', function (e) {
   e.preventDefault();
-  formLabel.forEach(function (item) {
-    var input = item.querySelector("input");
-
-    switch (input.type) {
-      case "text":
-      case "date":
-        input.value != '' ? (inputValid(item), false) : inputInvalid(item);
-        break;
-
-      case 'email':
-        input.value != '' && /\w*@\w*\.\w*/.test(input.value) ? (inputValid(item), false) : inputInvalid(item);
-        break;
-    }
+  formOpendayLabel.forEach(function (field) {
+    var input = field.querySelector(".form__input");
+    input.value != '' ? (inputValid(field), false) : inputInvalid(field);
   });
   return false;
 });

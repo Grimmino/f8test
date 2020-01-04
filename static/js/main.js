@@ -1,74 +1,47 @@
-//show/hide popup
-let modal = document.querySelector('.modal')
-let modalToggler = document.querySelector('.btn__modal')
-let closeModal = document.querySelector('.modal__close')
+const popupOpenday = document.querySelector('[data-modal="openday"]')
+const popupOpendayShow = document.querySelector('[data-modal="openday-show"]')
+const popupOpendayClose = popupOpenday.querySelector('[data-modal="openday-close"]')
 
-modalToggler.addEventListener('click', function() {
-    modal.classList.toggle('modal--show')
-})
+popupOpendayShow.addEventListener('click', actionModal)
+popupOpendayClose.addEventListener('click', actionModal)
 
-function hideModal() {
-    modal.classList.remove('modal--show')
+function actionModal() {
+    popupOpenday.classList.toggle('modal--show')
 }
 
-closeModal.addEventListener('click', function() {
-    hideModal()
+
+const formOpenday = popupOpenday.querySelector('[data-modal="openday-form"]')
+const formOpendayLabel = formOpenday.querySelectorAll('[data-modal="openday-form-field"]')
+
+
+formOpendayLabel.forEach(field => {
+    if(field.querySelector(".form__input_select")) {
+        field.classList.add('form__label--focus')
+    }
 })
 
-
-//form
-let formElem = document.querySelector('.form')
-let formLabel = formElem.querySelectorAll('.form__label:not(.form__label_checkbox)')
-
-//form-dropdown
-let formDropDownItem = formElem.querySelectorAll('.form__dropdown__item')
-
-formDropDownItem.forEach(item => {
-    item.addEventListener('click', function() {
-        let input = item.closest('.form__label').querySelector('.form__input')
-        input.value = item.textContent
-        input.classList.add('form__input--focus')
+formOpendayLabel.forEach(field => {
+    field.querySelector(".form__input").addEventListener("input", function(e) {
+        e.target.value != '' ? field.classList.add('form__label--focus') : field.classList.remove('form__label--focus')
     })
 })
 
-
-formLabel.forEach((item) => {
-    item.querySelector("input").addEventListener("input", function(e) {
-        e.target.value != '' ? e.target.classList.add('form__input--focus') : e.target.classList.remove('form__input--focus')
-        formDropDownItem.forEach(item => {
-            item.textContent.toUpperCase().indexOf(e.target.value.toUpperCase()) > -1 
-                ? item.classList.remove('form__dropdown__item--hide') 
-                : item.classList.add('form__dropdown__item--hide') 
-        })
-    })
-})
-
-function inputValid(item) {
-    item.classList.contains('error') ? item.classList.remove('error') : null
-    item.classList.add('valid')
+function inputValid(field) {
+    field.classList.contains('error') ? field.classList.remove('error') : null
+    field.classList.add('valid')
 }
-function inputInvalid(item) {
-    item.classList.contains('valid') ? item.classList.remove('valid') : null
-    item.classList.add('error')
+function inputInvalid(field) {
+    field.classList.contains('valid') ? field.classList.remove('valid') : null
+    field.classList.add('error')
 }
 
-//form validation
-formElem.addEventListener('submit', (e) => {
+formOpenday.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    formLabel.forEach(item => {
+    formOpendayLabel.forEach(field => {
+        let input = field.querySelector(".form__input")
 
-        let input = item.querySelector("input")
-
-        switch(input.type) {
-            case "text":
-            case "date":
-                input.value != '' ? (inputValid(item),false) : inputInvalid(item)
-                break
-            case 'email':
-                input.value != '' && /\w*@\w*\.\w*/.test(input.value) ? (inputValid(item),false) : inputInvalid(item)
-                break
-        }
+        input.value != '' ? ( inputValid(field), false) : inputInvalid(field)
     })
 
     return false

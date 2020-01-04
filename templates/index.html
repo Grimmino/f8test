@@ -20,89 +20,138 @@
                     <path d="M12 18.071L6.429 12.5 4.929 14 12 21.071 19.071 14 17.571 12.5z"></path>
                     <path d="M4 10H20V12H4z" transform="rotate(-90 12 11)"></path>
                 </symbol>
+                <symbol viewBox="0 0 128 128" id="check-mark">
+                    <polygon points="53.95 89.95 32.05 68.04 41.95 58.15 53.95 70.15 86.05 38.05 95.95 47.95 53.95 89.95"></polygon>
+                </symbol>
+                <symbol viewBox="0 0 27.963 27.963" id="check-mark-invalid">
+                    <polygon points="15.579,17.158 16.191,4.579 11.804,4.579 12.414,17.158 		"/>
+                    <path d="M13.998,18.546c-1.471,0-2.5,1.029-2.5,2.526c0,1.443,0.999,2.528,2.444,2.528h0.056c1.499,0,2.469-1.085,2.469-2.528 C16.441,19.575,15.468,18.546,13.998,18.546z"/>
+                </symbol>
             </defs>
         </svg>
     </div>
 
     <header class="header">
         <div class="header__modal">
-            <button class="btn btn__modal">Register for an Open Day</button>
+            <button class="btn btn__modal" data-modal="openday-show">Register for an Open Day</button>
         </div>
     </header>
 
-    <div class="modal">
+    <div class="modal" data-modal="openday">
         <div class="modal__inner">
-            <div class="modal__close"></div>
+            <div class="modal__close" data-modal="openday-close"></div>
             <div class="modal__title">
                 <span>come and say hello</span>
                 <h3>Register for an Open Day</h3>
             </div>
-            <form class="form" action="/" method="post">
+            <form class="form" action="/" method="GET" data-modal="openday-form">
                 <p>Open Days are the perfect opportunity to get to know us, visit our campus, see acccommodation, meet academics, and get the low-down on the Essex student life.</p>
                 
                 <div class="form__title">Book your place</div>
 
-                <label class="form__label">
-                    <input name="enducation" class="form__input" type="text" placeholder="Select enducation" autocomplete="off">
+                <label class="form__label" data-modal="openday-form-field">
+                    <select name="enducation" class="form__input form__input_select">
+                        <option class="form__dropdown__item" value="">Select enducation</option>
+                        <option class="form__dropdown__item" value="qwe">qwe</option>
+                        <option class="form__dropdown__item" value="gdg">gdg</option>
+                        <option class="form__dropdown__item" value="123123">123123</option>
+                        <option class="form__dropdown__item" value="asd asdasds">asd asdasds</option>
+                        <option class="form__dropdown__item" value="gdgasdasda">gdgasdasda</option>
+                    </select>
                     <span class="form__placeholder">I am an</span>
-                    <div class="form__dropdown_arrow">
-                        <svg class="form__dropdown_icon">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
-                        </svg>
-                    </div>
-                    <ul class="form__dropdown">
-                        <li class="form__dropdown__item">123123</li>
-                        <li class="form__dropdown__item">qwe</li>
-                        <li class="form__dropdown__item">gdg</li>
-                        <li class="form__dropdown__item">123123</li>
-                        <li class="form__dropdown__item">asd asdasds</li>
-                        <li class="form__dropdown__item">gdgasdasda sda </li>
-                    </ul>
+
+                    <svg class="form__icon_arrow">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
+                    </svg>
+                    <svg class="form__icon_check form__icon_valid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                    </svg>
+                    <svg class="form__icon_check form__icon_invalid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                    </svg>
                 </label>
     
-                <label class="form__label">
-                    <input name="campus" class="form__input" type="text" placeholder="Colchester Campus" autocomplete="off">
+                <label class="form__label" data-modal="openday-form-field">
+                    <select name="campus" class="form__input form__input_select">
+                        <option class="form__dropdown__item" value="">Colchester Campus</option>
+                        <option class="form__dropdown__item" value="qwe">qwe</option>
+                        <option class="form__dropdown__item" value="gdg">gdg</option>
+                        <option class="form__dropdown__item" value="123123">123123</option>
+                        <option class="form__dropdown__item" value="asd asdasds">asd asdasds</option>
+                        <option class="form__dropdown__item" value="gdgasdasda">gdgasdasda</option>
+                    </select>
                     <span class="form__placeholder">Campus</span>
-                    <div class="form__dropdown_arrow">
-                        <svg class="form__dropdown_icon">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
-                        </svg>
-                    </div>
-                    <ul class="form__dropdown">
-                        <li class="form__dropdown__item">123123</li>
-                        <li class="form__dropdown__item">qwe</li>
-                        <li class="form__dropdown__item">asd asdasds</li>
-                        <li class="form__dropdown__item">gdgasdasda sda </li>
-                    </ul>
+
+                    <svg class="form__icon_arrow">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
+                    </svg>
+                    <svg class="form__icon_check form__icon_valid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                    </svg>
+                    <svg class="form__icon_check form__icon_invalid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                    </svg>
                 </label>
     
-                <label class="form__label form__label_left-solo">
+                <label class="form__label form__label_left-solo" data-modal="openday-form-field">
                     <input name="date" class="form__input" type="date">
                     <span class="form__placeholder">Date*</span>
-                    <div class="form__dropdown_arrow">
-                        <svg class="form__dropdown_icon">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
-                        </svg>
-                    </div>
+
+                    <svg class="form__icon_arrow">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
+                    </svg>
+                    <svg class="form__icon_check form__icon_valid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                    </svg>
+                    <svg class="form__icon_check form__icon_invalid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                    </svg>
                 </label>
     
-                <label class="form__label form__label_left">
+                <label class="form__label form__label_left" data-modal="openday-form-field">
                     <input name="firstname" class="form__input" type="text">
                     <span class="form__placeholder">First Name*</span>
+
+                    <svg class="form__icon_check form__icon_valid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                    </svg>
+                    <svg class="form__icon_check form__icon_invalid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                    </svg>
                 </label>
-                <label class="form__label form__label_right">
+
+                <label class="form__label form__label_right" data-modal="openday-form-field">
                     <input name="lastname" class="form__input" type="text">
                     <span class="form__placeholder">Last Name*</span>
+
+                    <svg class="form__icon_check form__icon_valid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                    </svg>
+                    <svg class="form__icon_check form__icon_invalid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                    </svg>
                 </label>
-                <label class="form__label">
+
+                <label class="form__label" data-modal="openday-form-field">
                     <input name="email" class="form__input" type="email">
                     <span class="form__placeholder">Email Address*</span>
                     <span class="form__input_invalid">invalid format</span>
+
+                    <svg class="form__icon_check form__icon_valid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                    </svg>
+                    <svg class="form__icon_check form__icon_invalid">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                    </svg>
                 </label>
     
                 <label class="form__label form__label_checkbox">
                     <input name="updates" type="checkbox" class="form__checkbox">
-                    <span class="form__checkbox_toggler"></span>
+                    <span class="form__checkbox_toggler">
+                        <svg class="form__checkbox_check">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                        </svg>
+                    </span>
                     <span>I would like to receive email updates from the University</span>
                 </label>
                 

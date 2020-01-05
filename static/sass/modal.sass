@@ -8,36 +8,68 @@
     z-index: 100
     background: rgba(0,0,0,0.6)
     overflow-y: auto
+    padding: 1.25rem 1.25rem 8.75rem
+    @media (min-width: #{$breakpoint})
+        padding: 2.8rem 1.25rem 7.8rem
     &__inner
         width: 100%
         max-width: 730px
         margin: 0 auto
-        margin-top: 40px
-        margin-bottom: 40px
-        padding: 0 0 40px 0
-        background: #eaeaea url('../img/formBg.jpg') no-repeat top center / 100%
         position: relative
-    &__title
-        max-width: 650px
-        margin: 0 auto
+        background: #eaeaea 
+    &__hero
+        position: relative
         padding: 20px
+        @media (min-width: #{$breakpoint})
+            padding: 40px 40px 156px
+            margin-bottom: -156px
+        &_img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: left top
+            @media (min-width: #{$breakpoint})
+                object-position: left -40px
+    &__title
+        max-width: 76%
         color: $font-color
         font-weight: 800
+        position: relative
+        z-index: 1
         span
-            display: block
+            display: none
             text-transform: uppercase
             color: $font-color-details
-            & + h3
-                margin-top: 15px
         h3
             font-size: 1.75rem
-            max-width: 70%
+            font-weight: 800
+            margin-top: 30px
         @media (min-width: #{$breakpoint})
             font-size: 1.125rem
-            padding: 40px 0 20px
+            max-width: 375px
+            span
+                display: block
             h3
-                max-width: 375px
                 font-size: 3rem
+                margin-top: 10px
+    &__form
+        @media (min-width: #{$breakpoint})
+            padding: 30px 40px 40px
+        &_inner
+            position: relative
+            background: $body
+            padding: 20px
+            @media (min-width: #{$breakpoint})
+                padding: 35px
+            p
+                line-height: 1.62
+                &:not(:last-of-type)
+                    margin-bottom: 10px
+                &:not(:first-of-type)
+                    font-size: 0.75rem
 
 
     &__close
@@ -48,6 +80,7 @@
         height: 40px
         background: rgba(0,0,0,0.2)
         cursor: pointer
+        z-index: 100
         &:before,
         &:after
             content: ''

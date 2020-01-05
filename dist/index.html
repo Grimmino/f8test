@@ -38,133 +38,135 @@
     </header>
 
     <div class="modal" data-modal="openday">
-        <div class="modal__inner">
-            <div class="modal__close" data-modal="openday-close"></div>
-            <div class="modal__hero">
-                <img class="modal__hero_img" src="./img/formBg.jpg" alt>
-                <div class="modal__title">
-                    <span>come and say hello</span>
-                    <h3>Register for an Open Day</h3>
+        <div class="modal__content">
+            <div class="modal__inner">
+                <div class="modal__close" data-modal="openday-close"></div>
+                <div class="modal__hero">
+                    <img class="modal__hero_img" src="./img/formBg.jpg" alt>
+                    <div class="modal__title">
+                        <span>come and say hello</span>
+                        <h3>Register for an Open Day</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="modal__form">
-                <div class="modal__form_inner">
-                    <p>Open Days are the perfect opportunity to get to know us, visit our campus, see acccommodation, meet academics, and get the low-down on the Essex student life.</p>
-
-                    <form class="form" action="/" method="GET" data-modal="openday-form">
-                        <div class="form__title">Book your place</div>
-        
-                        <label class="form__label" data-modal="openday-form-field">
-                            <select name="enducation" class="form__input form__input_select">
-                                <option class="form__dropdown__item" value="">Select enducation</option>
-                                <option class="form__dropdown__item" value="qwe">qwe</option>
-                                <option class="form__dropdown__item" value="gdg">gdg</option>
-                                <option class="form__dropdown__item" value="123123">123123</option>
-                                <option class="form__dropdown__item" value="asd asdasds">asd asdasds</option>
-                                <option class="form__dropdown__item" value="gdgasdasda">gdgasdasda</option>
-                            </select>
-                            <span class="form__placeholder">I am an</span>
-        
-                            <svg class="form__icon_arrow">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
-                            </svg>
-                            <svg class="form__icon_check form__icon_valid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
-                            </svg>
-                            <svg class="form__icon_check form__icon_invalid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
-                            </svg>
-                        </label>
+                <div class="modal__form">
+                    <div class="modal__form_inner">
+                        <p>Open Days are the perfect opportunity to get to know us, visit our campus, see acccommodation, meet academics, and get the low-down on the Essex student life.</p>
+    
+                        <form class="form" action="/" method="GET" data-modal="openday-form">
+                            <div class="form__title">Book your place</div>
             
-                        <label class="form__label" data-modal="openday-form-field">
-                            <select name="campus" class="form__input form__input_select">
-                                <option class="form__dropdown__item" value="">Colchester Campus</option>
-                                <option class="form__dropdown__item" value="qwe">qwe</option>
-                                <option class="form__dropdown__item" value="gdg">gdg</option>
-                                <option class="form__dropdown__item" value="123123">123123</option>
-                                <option class="form__dropdown__item" value="asd asdasds">asd asdasds</option>
-                                <option class="form__dropdown__item" value="gdgasdasda">gdgasdasda</option>
-                            </select>
-                            <span class="form__placeholder">Campus</span>
-        
-                            <svg class="form__icon_arrow">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
-                            </svg>
-                            <svg class="form__icon_check form__icon_valid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
-                            </svg>
-                            <svg class="form__icon_check form__icon_invalid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
-                            </svg>
-                        </label>
+                            <label class="form__label" data-modal="openday-form-field">
+                                <select name="enducation" class="form__input form__input_select">
+                                    <option class="form__dropdown__item" value="">Select enducation</option>
+                                    <option class="form__dropdown__item" value="qwe">qwe</option>
+                                    <option class="form__dropdown__item" value="gdg">gdg</option>
+                                    <option class="form__dropdown__item" value="123123">123123</option>
+                                    <option class="form__dropdown__item" value="asd asdasds">asd asdasds</option>
+                                    <option class="form__dropdown__item" value="gdgasdasda">gdgasdasda</option>
+                                </select>
+                                <span class="form__placeholder">I am an</span>
             
-                        <label class="form__label form__label_left-solo" data-modal="openday-form-field">
-                            <input name="date" class="form__input" type="date">
-                            <span class="form__placeholder">Date*</span>
-        
-                            <svg class="form__icon_arrow">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
-                            </svg>
-                            <svg class="form__icon_check form__icon_valid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
-                            </svg>
-                            <svg class="form__icon_check form__icon_invalid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
-                            </svg>
-                        </label>
-            
-                        <label class="form__label form__label_left" data-modal="openday-form-field">
-                            <input name="firstname" class="form__input" type="text">
-                            <span class="form__placeholder">First Name*</span>
-        
-                            <svg class="form__icon_check form__icon_valid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
-                            </svg>
-                            <svg class="form__icon_check form__icon_invalid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
-                            </svg>
-                        </label>
-        
-                        <label class="form__label form__label_right" data-modal="openday-form-field">
-                            <input name="lastname" class="form__input" type="text">
-                            <span class="form__placeholder">Last Name*</span>
-        
-                            <svg class="form__icon_check form__icon_valid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
-                            </svg>
-                            <svg class="form__icon_check form__icon_invalid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
-                            </svg>
-                        </label>
-        
-                        <label class="form__label" data-modal="openday-form-field">
-                            <input name="email" class="form__input" type="email">
-                            <span class="form__placeholder">Email Address*</span>
-                            <span class="form__input_invalid">invalid format</span>
-        
-                            <svg class="form__icon_check form__icon_valid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
-                            </svg>
-                            <svg class="form__icon_check form__icon_invalid">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
-                            </svg>
-                        </label>
-            
-                        <label class="form__label form__label_checkbox">
-                            <input name="updates" type="checkbox" class="form__checkbox">
-                            <span class="form__checkbox_toggler">
-                                <svg class="form__checkbox_check">
+                                <svg class="form__icon_arrow">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
+                                </svg>
+                                <svg class="form__icon_check form__icon_valid">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
                                 </svg>
-                            </span>
-                            <span>I would like to receive email updates from the University</span>
-                        </label>
-                        
-                        <button class="btn btn__submit">Make A Booking</button>
+                                <svg class="form__icon_check form__icon_invalid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                                </svg>
+                            </label>
+                
+                            <label class="form__label" data-modal="openday-form-field">
+                                <select name="campus" class="form__input form__input_select">
+                                    <option class="form__dropdown__item" value="">Colchester Campus</option>
+                                    <option class="form__dropdown__item" value="qwe">qwe</option>
+                                    <option class="form__dropdown__item" value="gdg">gdg</option>
+                                    <option class="form__dropdown__item" value="123123">123123</option>
+                                    <option class="form__dropdown__item" value="asd asdasds">asd asdasds</option>
+                                    <option class="form__dropdown__item" value="gdgasdasda">gdgasdasda</option>
+                                </select>
+                                <span class="form__placeholder">Campus</span>
             
-                    </form>
-                    
-                    <p>The information provided by you will be held by the University of Essex in accordance with the University's Data protection Policy and may be used for the University's marketing purposes. On occasion we may contact you to advertise events with information relevant to student recruitment. If you do not wish to receive this information, please select the opt out function which can be found at the foot of your confirmation email. You will receive this email within 24 hours of registering.</p>
+                                <svg class="form__icon_arrow">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
+                                </svg>
+                                <svg class="form__icon_check form__icon_valid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                                </svg>
+                                <svg class="form__icon_check form__icon_invalid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                                </svg>
+                            </label>
+                
+                            <label class="form__label form__label_left-solo" data-modal="openday-form-field">
+                                <input name="date" class="form__input" type="date">
+                                <span class="form__placeholder">Date*</span>
+            
+                                <svg class="form__icon_arrow">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-bottom"></use>
+                                </svg>
+                                <svg class="form__icon_check form__icon_valid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                                </svg>
+                                <svg class="form__icon_check form__icon_invalid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                                </svg>
+                            </label>
+                
+                            <label class="form__label form__label_left" data-modal="openday-form-field">
+                                <input name="firstname" class="form__input" type="text">
+                                <span class="form__placeholder">First Name*</span>
+            
+                                <svg class="form__icon_check form__icon_valid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                                </svg>
+                                <svg class="form__icon_check form__icon_invalid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                                </svg>
+                            </label>
+            
+                            <label class="form__label form__label_right" data-modal="openday-form-field">
+                                <input name="lastname" class="form__input" type="text">
+                                <span class="form__placeholder">Last Name*</span>
+            
+                                <svg class="form__icon_check form__icon_valid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                                </svg>
+                                <svg class="form__icon_check form__icon_invalid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                                </svg>
+                            </label>
+            
+                            <label class="form__label" data-modal="openday-form-field">
+                                <input name="email" class="form__input" type="email">
+                                <span class="form__placeholder">Email Address*</span>
+                                <span class="form__input_invalid">invalid format</span>
+            
+                                <svg class="form__icon_check form__icon_valid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                                </svg>
+                                <svg class="form__icon_check form__icon_invalid">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark-invalid"></use>
+                                </svg>
+                            </label>
+                
+                            <label class="form__label form__label_checkbox">
+                                <input name="updates" type="checkbox" class="form__checkbox">
+                                <span class="form__checkbox_toggler">
+                                    <svg class="form__checkbox_check">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#check-mark"></use>
+                                    </svg>
+                                </span>
+                                <span>I would like to receive email updates from the University</span>
+                            </label>
+                            
+                            <button class="btn btn__submit">Make A Booking</button>
+                
+                        </form>
+    
+                        <p>The information provided by you will be held by the University of Essex in accordance with the University's Data protection Policy and may be used for the University's marketing purposes. On occasion we may contact you to advertise events with information relevant to student recruitment. If you do not wish to receive this information, please select the opt out function which can be found at the foot of your confirmation email. You will receive this email within 24 hours of registering.</p>
+                    </div>
                 </div>
             </div>
         </div>

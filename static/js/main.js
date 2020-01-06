@@ -15,13 +15,13 @@ const formOpendayLabel = formOpenday.querySelectorAll('[data-modal="openday-form
 
 
 formOpendayLabel.forEach(field => {
-    if(field.querySelector(".form__input_select")) {
+    if(field.querySelector('.form__input_select')) {
         field.classList.add('form__label--focus')
     }
 })
 
 formOpendayLabel.forEach(field => {
-    field.querySelector(".form__input").addEventListener("input", function(e) {
+    field.querySelector('.form__input').addEventListener('input', function(e) {
         e.target.value != '' ? field.classList.add('form__label--focus') : field.classList.remove('form__label--focus')
     })
 })
@@ -39,7 +39,7 @@ formOpenday.addEventListener('submit', (e) => {
     e.preventDefault()
 
     formOpendayLabel.forEach(field => {
-        let input = field.querySelector(".form__input")
+        let input = field.querySelector('.form__input')
 
         input.value != '' ? ( inputValid(field), false) : inputInvalid(field)
     })

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -490,21 +490,9 @@ function updateLink (link, options, obj) {
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(normalize_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _sass_style_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
-/* harmony import */ var _sass_style_sass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sass_style_sass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _js_main__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
-/* harmony import */ var _js_main__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_main__WEBPACK_IMPORTED_MODULE_2__);
-//styles
-
- //js
-
-
+module.exports = __webpack_require__.p + "./img/formBg.jpg";
 
 /***/ }),
 /* 2 */
@@ -674,12 +662,12 @@ function actionModal() {
 var formOpenday = popupOpenday.querySelector('[data-modal="openday-form"]');
 var formOpendayLabel = formOpenday.querySelectorAll('[data-modal="openday-form-field"]');
 formOpendayLabel.forEach(function (field) {
-  if (field.querySelector(".form__input_select")) {
+  if (field.querySelector('.form__input_select')) {
     field.classList.add('form__label--focus');
   }
 });
 formOpendayLabel.forEach(function (field) {
-  field.querySelector(".form__input").addEventListener("input", function (e) {
+  field.querySelector('.form__input').addEventListener('input', function (e) {
     e.target.value != '' ? field.classList.add('form__label--focus') : field.classList.remove('form__label--focus');
   });
 });
@@ -697,11 +685,43 @@ function inputInvalid(field) {
 formOpenday.addEventListener('submit', function (e) {
   e.preventDefault();
   formOpendayLabel.forEach(function (field) {
-    var input = field.querySelector(".form__input");
+    var input = field.querySelector('.form__input');
     input.value != '' ? (inputValid(field), false) : inputInvalid(field);
   });
   return false;
 });
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/normalize.css/normalize.css
+var normalize = __webpack_require__(2);
+
+// EXTERNAL MODULE: ./static/sass/style.sass
+var style = __webpack_require__(5);
+
+// EXTERNAL MODULE: ./static/img/formBg.jpg
+var formBg = __webpack_require__(1);
+var formBg_default = /*#__PURE__*/__webpack_require__.n(formBg);
+
+// CONCATENATED MODULE: ./static/js/files.js
+
+var modalHeroImg = document.querySelector('.modal__hero_img');
+modalHeroImg.src = formBg_default.a;
+// EXTERNAL MODULE: ./static/js/main.js
+var main = __webpack_require__(7);
+
+// CONCATENATED MODULE: ./static/index.js
+//styles
+
+ //js
+
+
+
 
 /***/ })
 /******/ ]);

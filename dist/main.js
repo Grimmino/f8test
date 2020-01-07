@@ -1399,6 +1399,7 @@ function inputInvalid(field) {
 
 formOpenday.addEventListener('submit', function (e) {
   e.preventDefault();
+  var valid = true;
   formOpendayLabel.forEach(function (field) {
     var input = field.querySelector('.form__input');
 
@@ -1406,20 +1407,22 @@ formOpenday.addEventListener('submit', function (e) {
       inputValid(field);
     } else {
       inputInvalid(field);
+      valid = false;
       return false;
     }
   });
+
+  if (!valid) {
+    return false;
+  }
+
   var obj = {};
   var formData = new FormData(formOpenday);
   formData.append('id', Math.random());
   formData.forEach(function (value, key) {
     obj[key] = value;
   });
-  postResource('/', obj).then(function (response) {
-    return console.log(response);
-  }).catch(function (err) {
-    return console.error(err);
-  });
+  postResource('/', obj);
 });
 
 function postResource(_x, _x2) {
@@ -1442,17 +1445,19 @@ function _postResource() {
                 'Content-Type': 'application/json'
               },
               body: JSON.stringify(data)
+            }).then(function (response) {
+              return response.json();
+            }).then(function (result) {
+              return console.log(result);
+            }).catch(function (err) {
+              return console.error(err);
             });
 
           case 2:
             res = _context.sent;
-            _context.next = 5;
-            return res.json();
+            return _context.abrupt("return", res);
 
-          case 5:
-            return _context.abrupt("return", _context.sent);
-
-          case 6:
+          case 4:
           case "end":
             return _context.stop();
         }

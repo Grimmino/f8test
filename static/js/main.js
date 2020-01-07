@@ -39,6 +39,8 @@ function inputInvalid(field) {
 formOpenday.addEventListener('submit', (e) => {
     e.preventDefault()
 
+    let valid = true
+
     formOpendayLabel.forEach(field => {
         let input = field.querySelector('.form__input')
 
@@ -46,10 +48,15 @@ formOpenday.addEventListener('submit', (e) => {
             inputValid(field)
         } else {
             inputInvalid(field)
+            valid = false
             return false
         }
     })
 
+    if(!valid) {
+        return false
+    }
+    
     let obj = {}
     let formData = new FormData(formOpenday)
     formData.append('id', Math.random())
@@ -59,8 +66,6 @@ formOpenday.addEventListener('submit', (e) => {
     })
 
     postResource('/', obj)
-        .then(response => console.log(response))
-        .catch(err => console.error(err))
 })
 
 async function postResource(url, data) {
@@ -71,6 +76,9 @@ async function postResource(url, data) {
         },
         body: JSON.stringify(data)
     })
+    .then(response => response.json())
+    .then(result => console.log(result))
+    .catch(err => console.error(err))
 
-    return await res.json()
+    return res
 }

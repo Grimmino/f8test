@@ -1422,6 +1422,7 @@ formOpenday.addEventListener('submit', function (e) {
   formData.forEach(function (value, key) {
     obj[key] = value;
   });
+  console.log(obj);
   postResource('/', obj);
 });
 

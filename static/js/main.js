@@ -56,7 +56,7 @@ formOpenday.addEventListener('submit', (e) => {
     if(!valid) {
         return false
     }
-    
+
     let obj = {}
     let formData = new FormData(formOpenday)
     formData.append('id', Math.random())
@@ -64,6 +64,7 @@ formOpenday.addEventListener('submit', (e) => {
     formData.forEach((value, key) => {
         obj[key] = value
     })
+    console.log(obj)
 
     postResource('/', obj)
 })
